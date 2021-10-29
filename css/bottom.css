@@ -1,0 +1,24 @@
+
+.bottom{
+    transition: background 0.5s ease-in-out;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+
+    color: white;
+    background-color: lightblue;
+    height: 50px;
+    width: 100vw;
+
+    padding: 10px;
+    box-sizing: border-box;
+    
+    font-size: 13px;
+    text-align: center;
+
+    z-index: 10;
+}
