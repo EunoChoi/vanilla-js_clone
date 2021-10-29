@@ -6,9 +6,11 @@ const rand = Math.floor(Math.random() * colors.length);
 
 function changBg(){
     const rand = Math.floor(Math.random() * colors.length);
-
-    headerArea.style.backgroundColor = colors[rand];
-    bottomArea.style.backgroundColor = colors[rand];
+    if(headerArea.style.backgroundColor !== colors[rand]){
+        headerArea.style.backgroundColor = colors[rand];
+        bottomArea.style.backgroundColor = colors[rand];
+    }  
+    else changBg();
 }
 changBg();
 

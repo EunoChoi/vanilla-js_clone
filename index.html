@@ -12,14 +12,14 @@
         <h1>Todo List</h1>
 
         <form id="login_form" action="">
-            <input id="input_name" required type="text" type="text" placeholder="Enter your name">
+            <input id="input_name" maxlength="15" required type="text" type="text" placeholder="Enter your name">
         </form>
 
         <div id="clock" class="hidden"></div>
         <div id="weather_info" class="hidden"></div>    
 
         <form id="todo_form" action="">
-            <input id="input_todos" required type="text" placeholder="Enter todo list">
+            <input id="input_todos" maxlength="30" required type="text" placeholder="Enter todo list">
             <div id="input_todos_btn"><i class="fas fa-paper-plane"></i></div>
         </form>
     </div>
@@ -42,9 +42,10 @@
     <script src="https://kit.fontawesome.com/2370a8bb66.js" crossorigin="anonymous"></script>
     
     <script src="bgimg.js"></script>
-    <script src="todo.js"></script>
+    <script src="quotes.js"></script>
     <script src="weather.js"></script>
     <script src="clock.js"></script>
+    <script src="todo.js"></script>
     <script src="login.js"></script>
     
 </body>
