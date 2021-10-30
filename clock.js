@@ -1,14 +1,24 @@
 const clock = document.querySelector("#clock");
 
-function timer()
+function getEventTime()
 {
     const date = new Date();
-    const year = String(date.getFullYear()).padStart(2,"0");
-    const month = String(date.getMonth()).padStart(2,"0");
-    const day = String(date.getDate()).padStart(2,"0");
-    const hours = String(date.getHours()).padStart(2,"0");
-    const minutes = String(date.getMinutes()).padStart(2,"0");
-    const seconds = String(date.getSeconds()).padStart(2,"0");
 
-    clock.innerText = `${hours}:${minutes}:${seconds}`;
+    now = {
+        id : String(date.getTime()),
+        year : String(date.getFullYear()).padStart(2,"0"),
+        month : String(date.getMonth()+1).padStart(2,"0"),
+        day : String(date.getDate()).padStart(2,"0"),
+        hours : String(date.getHours()).padStart(2,"0"),
+        minutes : String(date.getMinutes()).padStart(2,"0"),
+        seconds : String(date.getSeconds()).padStart(2,"0")
+    };
+
+   return now;
+}
+
+function timer()
+{
+    const now = getEventTime();
+    clock.innerText = `${now.hours}:${now.minutes}:${now.seconds}`;
 }

@@ -4,6 +4,51 @@
     color: rgba(0,0,0,0.6);
 }
 
+#input_todos{
+    position: fixed;
+    top: 275px;
+    right: 10vw;
+
+    background-color: white;
+    color: gray;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px gray;
+
+    height: 50px;
+    width: 80vw;
+
+    text-align: center;
+    font-size: 16px;
+
+    padding : 0px 60px;
+    margin: 0px;
+
+    box-sizing: border-box;
+}
+#input_todos_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 275px;
+
+    right: 10vw;
+
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border : none;
+
+    padding : 0px;
+    margin: 0px;
+
+    background-color:salmon;
+    color: white;
+    font-size: 20px;
+}
+
 #todolist{
     display: flex;
     flex-direction: column;
@@ -44,8 +89,4 @@
     overflow: hidden;
 	text-overflow: ellipsis;
     margin : 0px 15px;
-}
-
-.todolist_delete{
-    color: lightblue;
 }
