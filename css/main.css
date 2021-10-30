@@ -14,11 +14,16 @@
 }
 #todolist li{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+
+    
+    width: 80vw;
     
     list-style: none;
     border-bottom: rgba(0, 0, 0, 0.1) solid 1px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
     font-size: 15px;
@@ -34,7 +39,7 @@
 }
 
 .todolist_text{
-    width: 50vw;
+    width: calc(80vw - 150px);
     white-space: nowrap;
     overflow: hidden;
 	text-overflow: ellipsis;
