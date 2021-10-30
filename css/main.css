@@ -64,10 +64,9 @@
     width: 80vw;
     
     list-style: none;
-    border-bottom: rgba(0, 0, 0, 0.1) solid 1px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    border-bottom: rgba(0, 0, 0, 0.05) solid 1px;
+
+    padding: 10px 10px;
     margin-bottom: 10px;
     font-size: 16px;
 }
@@ -78,10 +77,6 @@
 #todolist li:last-child{
     border: none;
     margin-bottom: 50px;
-}
-
-.todolist_time{
-    color:salmon;
 }
 
 .todolist_text{

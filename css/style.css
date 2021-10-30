@@ -22,3 +22,7 @@ input[type="text"]:focus-within{
     display: none;
 }
 
+.star{
+    background-color: salmon;
+    font-weight: 800;
+}

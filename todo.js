@@ -78,6 +78,13 @@ function deleteList(event){
     //console.dir(todoDB);
 }
 
+function star(event)
+{
+    console.dir(event.target.parentElement);
+    event.target.parentElement.classList.toggle("star");
+    //event.target.sytle.color = "tomato";
+}
+
 function addList(id, time, timeAlt, text){
     //ul태그는 이미 추가되어있으니 li태그를 ul태그 하위에 추가시킨다
     const li = document.createElement("li");
@@ -98,6 +105,7 @@ function addList(id, time, timeAlt, text){
 
     spanTime.innerText = time;
 	spanText.innerText = text;
+    spanText.className = "todolist_text";
 
 	todoList.appendChild(li);
 
@@ -105,15 +113,20 @@ function addList(id, time, timeAlt, text){
     
     //add event Listener each span in list
     spanText.addEventListener("click", function(){viewOpen(timeAlt,text)});
+    spanTime.addEventListener("click", star);
     spanDelete.addEventListener("click", deleteList);
 }
 function resetStorage()
 {
     todoDB = [];
+    localStorage.removeItem("user");
     localStorage.removeItem("todoDB");
-    while(todoList.hasChildNodes()){
-        todoList.removeChild(todoList.firstChild);
-    }
+    /*새로고침 해버리는게 더 간단하다
+        while(todoList.hasChildNodes()){
+            todoList.removeChild(todoList.firstChild);
+        }
+    */
+    history.go(0);
     statusLeft.innerText=`${todoDB.length} things left`;
 }
 
