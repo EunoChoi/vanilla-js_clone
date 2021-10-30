@@ -1,5 +1,7 @@
 
 #popup{
+    animation: fadeIn ease-in-out 0.5s forwards;
+
     z-index: 10;
 
     display: flex;

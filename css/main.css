@@ -1,9 +1,13 @@
 
 .main{
+    animation: fadeIn ease-in-out 0.8s;
     margin-top: 350px;
     color: rgba(0,0,0,0.6);
 }
 #input_todos{
+
+    animation: fadeIn ease-in-out 0.8s;
+
     position: fixed;
     top: 275px;
     right: 10vw;
