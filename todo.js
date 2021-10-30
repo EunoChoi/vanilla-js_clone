@@ -7,9 +7,12 @@ const popupText = document.querySelector("#popup_text");
 const popupClose = document.querySelector("#popup_close");
 
 const todoList = document.querySelector("#todolist");
+const todoInputBtn = document.querySelector("#input_todos_btn");
+
+const statusLeft = document.querySelector(".status");
+const resetBtn = document.querySelector(".reset");
+
 let todoDB = [ ];
-
-
 
 function input(event){
     event.preventDefault();
@@ -68,6 +71,8 @@ function deleteList(event){
     li.remove();
 
     todoDB = todoDB.filter(item=> item.id != deleteId);
+    statusLeft.innerText=`${todoDB.length} things left`;
+
     localStorage.setItem("todoDB",JSON.stringify(todoDB));
 
     //console.dir(todoDB);
@@ -95,10 +100,21 @@ function addList(id, time, timeAlt, text){
 	spanText.innerText = text;
 
 	todoList.appendChild(li);
+
+    statusLeft.innerText=`${todoDB.length} things left`;
     
     //add event Listener each span in list
     spanText.addEventListener("click", function(){viewOpen(timeAlt,text)});
     spanDelete.addEventListener("click", deleteList);
+}
+function resetStorage()
+{
+    todoDB = [];
+    localStorage.removeItem("todoDB");
+    while(todoList.hasChildNodes()){
+        todoList.removeChild(todoList.firstChild);
+    }
+    statusLeft.innerText=`${todoDB.length} things left`;
 }
 
 //로컬스토리지에 todoDB존재한다면 불러온다
@@ -111,5 +127,9 @@ if(localStorage.getItem("todoDB")!=null){
     }
 }
 
+statusLeft.innerText=`${todoDB.length} things left`;
+
 popupClose.addEventListener("click", viewClose);
 todoForm.addEventListener("submit", input);
+todoInputBtn.addEventListener("submit", input);
+resetBtn.addEventListener("click",resetStorage);

@@ -3,7 +3,6 @@
     margin-top: 350px;
     color: rgba(0,0,0,0.6);
 }
-
 #input_todos{
     position: fixed;
     top: 275px;
@@ -27,13 +26,13 @@
     box-sizing: border-box;
 }
 #input_todos_btn{
+    font-family: FontAwesome;
     display: flex;
     justify-content: center;
     align-items: center;
 
     position: fixed;
     top: 275px;
-
     right: 10vw;
 
     height: 50px;
@@ -46,9 +45,8 @@
 
     background-color:salmon;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
 }
-
 #todolist{
     display: flex;
     flex-direction: column;
@@ -71,7 +69,10 @@
     padding-right: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 16px;
+}
+#todolist li span:first-child{
+    font-weight: 600;
 }
 
 #todolist li:last-child{
@@ -80,7 +81,7 @@
 }
 
 .todolist_time{
-
+    color:salmon;
 }
 
 .todolist_text{

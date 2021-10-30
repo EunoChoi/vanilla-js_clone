@@ -25,6 +25,30 @@
     font-size: 50px;
 }
 
+.header_btn{
+    position: fixed;
+    top : 10px;
+
+    height: 20px;
+
+    text-align: center;
+    background-color: opacity(0);
+    color : whitesmoke;
+    z-index: 30;
+}
+.header .reset{
+    right: 10px;
+    width: 50px;
+    
+
+    border-bottom: solid whitesmoke 2px;
+}
+
+.header .status{
+    right: 80px;
+    width: 140px;
+    text-align: right;
+}
 
 #input_name{
 
