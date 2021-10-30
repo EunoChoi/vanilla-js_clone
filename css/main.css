@@ -29,11 +29,11 @@
     margin-bottom: 50px;
 }
 
-#todolist_time{
+.todolist_time{
 
 }
 
-#todolist_text{
+.todolist_text{
     width: 50vw;
     white-space: nowrap;
     overflow: hidden;
@@ -41,6 +41,6 @@
     margin : 0px 15px;
 }
 
-#todolist_delete{
+.todolist_delete{
     color: lightblue;
 }

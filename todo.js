@@ -1,7 +1,10 @@
 const todoForm = document.querySelector("#todo_form");
-const list = document.querySelector("#todolist li");
+
 const popup = document.querySelector("#popup");
 const popupClose = document.querySelector("#popup_close");
+
+const listText = document.querySelectorAll(".todolist_text");
+const list = document.querySelectorAll("#todolist li");
 
 function input(event){
     event.preventDefault();
@@ -16,6 +19,13 @@ function viewClose(){
     popup.style.display = "none";
 }
 
+
+
 todoForm.addEventListener("submit", input);
-list.addEventListener("click", viewOpen)
+
 popupClose.addEventListener("click", viewClose);
+
+for(let i=0;i<listText.length;i++)
+{
+    listText[i].addEventListener("click", viewOpen);
+}
