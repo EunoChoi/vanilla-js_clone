@@ -5,6 +5,7 @@ const popup = document.querySelector("#popup");
 const popupTime = document.querySelector("#popup_time");
 const popupText = document.querySelector("#popup_text");
 const popupClose = document.querySelector("#popup_close");
+const popupHighlight = document.querySelector("#popup_highlight");
 
 const todoList = document.querySelector("#todolist");
 const todoInputBtn = document.querySelector("#input_todos_btn");
@@ -50,14 +51,48 @@ function input(event){
     addList(inputTime.id, time,timeAlt,text);
 }
 
-function viewOpen(time, text){
-    popup.style.display = "flex";
+function viewOpen(time, text, id){
+    
+    localStorage.setItem("temp",id);
+    popup.classList.toggle("appear");
+
     popupTime.innerText = time;
     popupText.innerText = text;
 }
+/*
+function viewOpen(event)
+{
+    popup.classList.toggle("appear");
+    const open = event;
+    //console.log(String(event));
+    console.log(open);
+    console.log(JSON.stringify(open));
+    localStorage.setItem("temp", JSON.stringify(event));
+    
+    //event.target.parentElement.classList.toggle("star");
+}*/
 
 function viewClose(){
-    popup.style.display = "none";
+    
+    popup.classList.add("disappear");
+    //localStorage.removeItem("temp");
+    setTimeout(function(){ popup.classList.remove("appear")},500);
+    setTimeout(function(){ popup.classList.remove("disappear")},500);
+}
+function listHighlight(event)
+{
+    let index;
+    id = localStorage.getItem("temp");
+
+    for(let i=0;i<todoDB.length;i++){
+        if(todoDB[i].id===id){
+            index = i;
+        }
+    }
+    todoList.childNodes[index+1].classList.toggle("star");
+    localStorage.removeItem("temp");
+    //console.dir(event.target.parentElement);
+    viewClose();
 }
 
 function deleteFilter(item){
@@ -66,21 +101,24 @@ function deleteFilter(item){
 }
 
 function deleteList(event){
-    const li = event.target.parentElement.parentElement;
-    const deleteId = event.target.parentElement.className;
-    li.remove();
 
-    todoDB = todoDB.filter(item=> item.id != deleteId);
-    statusLeft.innerText=`${todoDB.length} things left`;
-
-    localStorage.setItem("todoDB",JSON.stringify(todoDB));
-
-    //console.dir(todoDB);
+    const deleteOk = confirm("Do you want to delete the list item?");
+    if(deleteOk === true)
+    {
+        const li = event.target.parentElement.parentElement;
+        const deleteId = event.target.parentElement.className;
+        li.remove();
+    
+        todoDB = todoDB.filter(item=> item.id != deleteId);
+        statusLeft.innerText=`${todoDB.length} things left`;
+    
+        localStorage.setItem("todoDB",JSON.stringify(todoDB));
+    }
 }
 
 function star(event)
 {
-    console.dir(event.target.parentElement);
+    //console.dir(event.target.parentElement);
     event.target.parentElement.classList.toggle("star");
     //event.target.sytle.color = "tomato";
 }
@@ -97,6 +135,8 @@ function addList(id, time, timeAlt, text){
     li.appendChild(spanTime);
 	li.appendChild(spanText);
     li.appendChild(spanDelete);
+    li.style.borderRadius = "10px";
+    li.style.transition = "background 0.5s ease-in-out";
 
     spanDelete.appendChild(i);
     spanDelete.className = id;
@@ -105,14 +145,14 @@ function addList(id, time, timeAlt, text){
 
     spanTime.innerText = time;
 	spanText.innerText = text;
-    spanText.className = "todolist_text";
 
 	todoList.appendChild(li);
 
     statusLeft.innerText=`${todoDB.length} things left`;
     
     //add event Listener each span in list
-    spanText.addEventListener("click", function(){viewOpen(timeAlt,text)});
+    spanText.addEventListener("click", function(){viewOpen(timeAlt,text,id)});
+    //spanText.addEventListener("click", viewOpen);
     spanTime.addEventListener("click", star);
     spanDelete.addEventListener("click", deleteList);
 }
@@ -143,6 +183,7 @@ if(localStorage.getItem("todoDB")!=null){
 statusLeft.innerText=`${todoDB.length} things left`;
 
 popupClose.addEventListener("click", viewClose);
+popupHighlight.addEventListener("click", listHighlight);
 todoForm.addEventListener("submit", input);
 todoInputBtn.addEventListener("submit", input);
 resetBtn.addEventListener("click",resetStorage);

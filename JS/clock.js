@@ -17,8 +17,18 @@ function getEventTime()
    return now;
 }
 
+function startInterval(func, ms)
+{
+    func();
+    return setInterval(func,ms);
+}
+
 function timer()
 {
     const now = getEventTime();
     clock.innerText = `${now.hours}:${now.minutes}:${now.seconds}`;
 }
+
+startInterval(timer,1000);
+
+

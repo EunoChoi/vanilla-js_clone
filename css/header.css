@@ -1,5 +1,5 @@
 .header{
-    transition: background 0.5s ease-in-out;
+    transition: all 0.8s ease-in-out;
 
     position:  fixed;
     top: 0px;
@@ -11,7 +11,7 @@
 
     width: 100vw;
     height: 300px;
-    padding: 60px 0px;
+    padding: 40px 0px;
     box-sizing: border-box;
 
     color: white;
@@ -23,7 +23,6 @@
     text-transform : uppercase;
 
     margin: 0px;
-    /*margin-bottom: 30px;*/
     font-size: 50px;
 }
 
@@ -86,11 +85,9 @@
 #clock{
     animation: fadeIn ease-in-out 0.8s forwards;
 
-
     margin:20px 0px;
     font-size: 51px;
     font-weight: 600;
-    /*margin-bottom: 10px;*/
 
     width: 210px;
     text-align: start;

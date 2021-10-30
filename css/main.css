@@ -1,16 +1,27 @@
 
 .main{
     animation: fadeIn ease-in-out 0.8s;
-    margin-top: 350px;
+    margin-top: 300px;
+    padding-top: 50px;
     color: rgba(0,0,0,0.6);
 }
+.input_todo_area{
+    will-change: auto;
+    transition: all 0.6s ease-in-out ;
+
+    position: absolute;
+    bottom: -25px;
+
+    width: 60vw;
+    height: 50px;
+    z-index: 100;
+}
+.input_todo_area:focus-within{
+    width: 70vw;
+}
 #input_todos{
-
-    animation: fadeIn ease-in-out 0.8s;
-
-    position: fixed;
-    top: 275px;
-    right: 10vw;
+    animation: fadeIn ease-in-out 1.0s;
+    position: absolute;
 
     background-color: white;
     color: gray;
@@ -19,7 +30,7 @@
     box-shadow: 0px 0px 10px gray;
 
     height: 50px;
-    width: 80vw;
+    width: 100%;
 
     text-align: center;
     font-size: 16px;
@@ -30,17 +41,18 @@
     box-sizing: border-box;
 }
 #input_todos_btn{
-    font-family: FontAwesome;
+    /*transition: all 0.6s ease-in-out ;*/
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    position: fixed;
-    top: 275px;
-    right: 10vw;
+    position: absolute;
 
     height: 50px;
     width: 50px;
+    right: 0px;
+
     border-radius: 50%;
     border : none;
 
@@ -49,7 +61,7 @@
 
     background-color:salmon;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 }
 #todolist{
     display: flex;
@@ -57,7 +69,7 @@
 
     align-items: center;
     padding: 0px;
-    margin-top: 60px;
+    margin-top: 0px;
 }
 #todolist li{
     display: flex;
@@ -77,16 +89,26 @@
 #todolist li span:first-child{
     font-weight: 600;
 }
-
-#todolist li:last-child{
-    border: none;
-    margin-bottom: 50px;
+#todolist li span:first-child:hover{
+    animation: dance 0.7s ease-in-out infinite;
 }
 
-.todolist_text{
-    width: calc(80vw - 150px);
+#todolist li span:nth-child(2){
+    width: calc(80vw - 170px);
     white-space: nowrap;
     overflow: hidden;
 	text-overflow: ellipsis;
     margin : 0px 15px;
+}
+#todolist li span:nth-child(2):hover{
+    animation: dance 0.7s ease-in-out infinite;
+
+}
+#todolist li span:last-child:hover{
+    animation: dance 0.7s ease-in-out infinite;
+}
+
+#todolist li:last-child{
+    border: none;
+    margin-bottom: 50px;
 }
