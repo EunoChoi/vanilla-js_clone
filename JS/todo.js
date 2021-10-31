@@ -6,6 +6,7 @@ const popupTime = document.querySelector("#popup_time");
 const popupText = document.querySelector("#popup_text");
 const popupClose = document.querySelector("#popup_close");
 const popupHighlight = document.querySelector("#popup_highlight");
+const popupSave = document.querySelector("#popup_save");
 
 const todoList = document.querySelector("#todolist");
 const todoInputBtn = document.querySelector("#input_todos_btn");
@@ -51,26 +52,17 @@ function input(event){
     addList(inputTime.id, time,timeAlt,text);
 }
 
-function viewOpen(time, text, id){
+function viewOpen(event){
+    time = event.target.parentElement.childNodes[0].innerText;
+    text = event.target.parentElement.childNodes[1].innerText;
+    id = event.target.parentElement.childNodes[2].className;
     
     localStorage.setItem("temp",id);
     popup.classList.toggle("appear");
 
     popupTime.innerText = time;
-    popupText.innerText = text;
+    popupText.value = text;
 }
-/*
-function viewOpen(event)
-{
-    popup.classList.toggle("appear");
-    const open = event;
-    //console.log(String(event));
-    console.log(open);
-    console.log(JSON.stringify(open));
-    localStorage.setItem("temp", JSON.stringify(event));
-    
-    //event.target.parentElement.classList.toggle("star");
-}*/
 
 function viewClose(){
     
@@ -89,9 +81,34 @@ function listHighlight(event)
             index = i;
         }
     }
-    todoList.childNodes[index+1].classList.toggle("star");
+
+    todoList.childNodes[index].classList.toggle("star");
     localStorage.removeItem("temp");
-    //console.dir(event.target.parentElement);
+    viewClose();
+}
+function textSave(event){
+    
+    let index;
+    id = localStorage.getItem("temp");
+
+    for(let i=0;i<todoDB.length;i++){
+        if(todoDB[i].id===id){
+            todoDB[i].text = popupText.value; 
+            index = i; 
+            break;
+        }
+    }
+    /*
+    console.log(index);
+    console.log(todoList.childNodes[index]);
+    */
+
+    todoList.childNodes[index].childNodes[1].innerText = popupText.value;
+    //변경되야할 부분은 input type text가 아니라 span이므로 innerText 사용
+
+
+    localStorage.setItem("todoDB", JSON.stringify(todoDB));
+    localStorage.removeItem("temp");
     viewClose();
 }
 
@@ -123,7 +140,8 @@ function star(event)
     //event.target.sytle.color = "tomato";
 }
 
-function addList(id, time, timeAlt, text){
+function addList(id, time, timeAlt, text){ 
+
     //ul태그는 이미 추가되어있으니 li태그를 ul태그 하위에 추가시킨다
     const li = document.createElement("li");
     const spanTime = document.createElement("span");
@@ -138,6 +156,7 @@ function addList(id, time, timeAlt, text){
     li.style.borderRadius = "10px";
     li.style.transition = "background 0.5s ease-in-out";
 
+    //id를 spanDelete가 가지고 있어서 검색시 활용
     spanDelete.appendChild(i);
     spanDelete.className = id;
     i.className = "fas fa-times-circle";
@@ -151,7 +170,7 @@ function addList(id, time, timeAlt, text){
     statusLeft.innerText=`${todoDB.length} things left`;
     
     //add event Listener each span in list
-    spanText.addEventListener("click", function(){viewOpen(timeAlt,text,id)});
+    spanText.addEventListener("click", viewOpen);
     //spanText.addEventListener("click", viewOpen);
     spanTime.addEventListener("click", star);
     spanDelete.addEventListener("click", deleteList);
@@ -184,6 +203,8 @@ statusLeft.innerText=`${todoDB.length} things left`;
 
 popupClose.addEventListener("click", viewClose);
 popupHighlight.addEventListener("click", listHighlight);
+popupSave.addEventListener("click", textSave);
+
 todoForm.addEventListener("submit", input);
 todoInputBtn.addEventListener("submit", input);
 resetBtn.addEventListener("click",resetStorage);

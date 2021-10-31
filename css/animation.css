@@ -14,6 +14,17 @@
         opacity: 0;
     }
 }
+
+@keyframes splash {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 @keyframes dance {
     0%{
         transform: translateY(0px);

@@ -3,6 +3,7 @@ const loginForm = document.querySelector("#login_form");
 const headerTitle = document.querySelector(".header h1");
 const inputName = document.querySelector("#input_name");
 const wellcomeArea = document.querySelector("#wellcome");
+const splash = document.querySelector("#splash_img");
 
 loginForm.addEventListener("submit",submitLogin);
 
@@ -31,7 +32,9 @@ function submitLogin(event){
     localStorage.setItem("user", inputName.value);
 }
 
+
 if(localStorage.getItem("user") == null && localStorage.getItem("todoDB") == null){
+    splash.style.visibility = "visible";   
     clock.classList.add("hidden");
     todoForm.classList.add("hidden");
 }
@@ -39,6 +42,7 @@ if(localStorage.getItem("user") == null && localStorage.getItem("todoDB") == nul
 if(localStorage.getItem("user")!=null){
     loginByName(localStorage.getItem("user"));
 }
+
 else{
     headerArea.style.height = "100vh";
     headerArea.style.padding = "150px 0px";

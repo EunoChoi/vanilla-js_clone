@@ -28,6 +28,13 @@
     top : 15px;
     font-weight: 600;
 }
+#popup_text{
+    border : none;
+
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
 #popup_menu{
     display: flex;
     justify-content: space-around;
@@ -46,4 +53,13 @@
     height: 50px;
 
     font-size: 17px;
+}
+#popup_highlight{
+    width : 30%;
+}
+#popup_save{
+    width : 30%;
+}
+#popup_close{
+    width : 30%;
 }

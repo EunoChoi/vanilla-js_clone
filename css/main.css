@@ -18,6 +18,7 @@
 }
 .input_todo_area:focus-within{
     width: 70vw;
+    animation: dance ease-in-out 0.7s infinite;
 }
 #input_todos{
     animation: fadeIn ease-in-out 1.0s;
@@ -89,9 +90,7 @@
 #todolist li span:first-child{
     font-weight: 600;
 }
-#todolist li span:first-child:hover{
-    animation: dance 0.7s ease-in-out infinite;
-}
+
 
 #todolist li span:nth-child(2){
     width: calc(80vw - 170px);
@@ -100,13 +99,17 @@
 	text-overflow: ellipsis;
     margin : 0px 15px;
 }
+/*hover animation in list
+#todolist li span:first-child:hover{
+    animation: dance 0.7s ease-in-out infinite;
+}
 #todolist li span:nth-child(2):hover{
     animation: dance 0.7s ease-in-out infinite;
-
 }
 #todolist li span:last-child:hover{
     animation: dance 0.7s ease-in-out infinite;
 }
+*/
 
 #todolist li:last-child{
     border: none;
