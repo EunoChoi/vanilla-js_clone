@@ -132,7 +132,7 @@ input[type="text"]:focus-within{
     justify-content: center;
     align-items: flex-start;
     width: calc(100vw - 100px);
-    height: calc(100vh - 200px);
+    height: calc(100vh - 250px);
 
     border : solid white 10px;
 }
