@@ -5,7 +5,6 @@ const inputName = document.querySelector("#input_name");
 const wellcomeArea = document.querySelector("#wellcome");
 const splash = document.querySelector("#splash_img");
 
-loginForm.addEventListener("submit",submitLogin);
 
 function loginByName(name){
     headerTitle.style.color = "salmon";
@@ -32,6 +31,7 @@ function submitLogin(event){
     localStorage.setItem("user", inputName.value);
 }
 
+loginForm.addEventListener("submit",submitLogin);
 
 if(localStorage.getItem("user") == null && localStorage.getItem("todoDB") == null){
     splash.style.visibility = "visible";   

@@ -33,12 +33,14 @@ function input(event){
         id : "",
         time : "",
         timeAlt : "",
-        text : ""
+        text : "",
+        star : ""
     }
     db.id = inputTime.id;
     db.time = time;
     db.timeAlt = timeAlt;
     db.text = text;
+    db.status = false;
 
     //make todoDB
     todoDB.push(db);
@@ -47,9 +49,10 @@ function input(event){
 
     //새로운 입력을 받기위해 입력창 비우기
     inputTodos.value = "";
-    
+
     changBg();
-    addList(inputTime.id, time,timeAlt,text);
+
+    addList(inputTime.id, time,timeAlt,text, db.status);
 }
 
 function viewOpen(event){
@@ -79,10 +82,19 @@ function listHighlight(event)
     for(let i=0;i<todoDB.length;i++){
         if(todoDB[i].id===id){
             index = i;
+            if(todoDB[i].status === true){
+                todoDB[i].status = false;
+            }
+            else {   
+                todoDB[i].status = true;
+            }
+            console.log(todoDB[i].text);
+            console.log(todoDB[i].status);
         }
     }
 
     todoList.childNodes[index].classList.toggle("star");
+    localStorage.setItem("todoDB", JSON.stringify(todoDB));
     localStorage.removeItem("temp");
     viewClose();
 }
@@ -106,15 +118,10 @@ function textSave(event){
     todoList.childNodes[index].childNodes[1].innerText = popupText.value;
     //변경되야할 부분은 input type text가 아니라 span이므로 innerText 사용
 
-
+    //localStorage에 저장
     localStorage.setItem("todoDB", JSON.stringify(todoDB));
     localStorage.removeItem("temp");
     viewClose();
-}
-
-function deleteFilter(item){
-    if(item.id !== "1635575059099")
-        return true;
 }
 
 function deleteList(event){
@@ -133,15 +140,35 @@ function deleteList(event){
     }
 }
 
-function star(event)
-{
-    //console.dir(event.target.parentElement);
+function star(event){
+    //console.log(event.target.parentElement);
+    //deleteBtn's class name mean id
+    console.log(event.target.parentElement.childNodes[2].className);
+    
+    //find list index using id
+    id = event.target.parentElement.childNodes[2].className;
+
+    for(let i=0;i<todoDB.length;i++){
+        if(todoDB[i].id===id){
+            if(todoDB[i].status === true){
+                todoDB[i].status = false;
+            }
+            else {   
+                todoDB[i].status = true;
+            }
+            console.log(todoDB[i].text);
+            console.log(todoDB[i].status);
+            break;
+        }
+    }
+    //star's ids set in localStorage for web page refresh
+    
     event.target.parentElement.classList.toggle("star");
+    localStorage.setItem("todoDB", JSON.stringify(todoDB));
     //event.target.sytle.color = "tomato";
 }
 
-function addList(id, time, timeAlt, text){ 
-
+function addList(id, time, timeAlt, text, status){ 
     //ul태그는 이미 추가되어있으니 li태그를 ul태그 하위에 추가시킨다
     const li = document.createElement("li");
     const spanTime = document.createElement("span");
@@ -149,12 +176,22 @@ function addList(id, time, timeAlt, text){
     const spanDelete = document.createElement("span");
     const i = document.createElement("i");
 
+    /*
+    console.log(status);
+    console.log(text);*/
+
     //append tag
     li.appendChild(spanTime);
 	li.appendChild(spanText);
     li.appendChild(spanDelete);
     li.style.borderRadius = "10px";
     li.style.transition = "background 0.5s ease-in-out";
+    //lodaing highlight property
+    
+    if(status===true){
+        li.classList.add("star");
+    }
+    
 
     //id를 spanDelete가 가지고 있어서 검색시 활용
     spanDelete.appendChild(i);
@@ -195,7 +232,8 @@ if(localStorage.getItem("todoDB")!=null){
     todoDB = parseTodoDB;
 
     for(let i=0; i<parseTodoDB.length; i++){
-        addList(parseTodoDB[i].id, parseTodoDB[i].time, parseTodoDB[i].timeAlt, parseTodoDB[i].text);
+        addList(parseTodoDB[i].id, parseTodoDB[i].time, 
+            parseTodoDB[i].timeAlt, parseTodoDB[i].text, parseTodoDB[i].status);
     }
 }
 

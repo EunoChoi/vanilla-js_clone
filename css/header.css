@@ -27,6 +27,8 @@
 }
 
 .header_btn{
+    animation: fadeIn ease-in-out 0.8s forwards;
+
     position: fixed;
     top : 10px;
 
@@ -38,19 +40,18 @@
     z-index: 30;
 }
 .header .reset{
-    animation: fadeIn ease-in-out 0.8s forwards;
-
     right: 10px;
     width: 50px;
-    
-
     border-bottom: solid whitesmoke 2px;
 }
-
+.header .info{
+    right: 70px;
+    width: 40px;
+    border-bottom: solid whitesmoke 2px;
+}
 .header .status{
-    animation: fadeIn ease-in-out 0.8s forwards;
 
-    right: 80px;
+    right: 120px;
     width: 140px;
     text-align: right;
 }
