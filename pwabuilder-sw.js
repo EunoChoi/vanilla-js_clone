@@ -12,6 +12,8 @@ self.addEventListener("message", (event) => {
     self.skipWaiting();
   }
 });
+
+
 self.addEventListener('install', async (event) => {
   event.waitUntil(
     caches.open(CACHE)
