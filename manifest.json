@@ -1,0 +1,23 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "todo",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "todo",
+  "start_url": "https://d162-222-120-12-152.ngrok.io",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+        "src": "/images/icon-109.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    },
+    {
+        "src": "/images/icon-111.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }
+  ]
+}
