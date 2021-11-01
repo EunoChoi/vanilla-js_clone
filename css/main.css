@@ -72,12 +72,20 @@
     padding: 0px;
     margin-top: 0px;
 }
+#todolist i{
+    color: lightblue;
+}
+#todolist i:hover{
+    color: salmon;
+}
 #todolist li{
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    
+    transition : background 0.5s ease-in-out;
+
+    border-radius: 10px;
     width: 80vw;
     
     list-style: none;
@@ -86,6 +94,9 @@
     padding: 10px 10px;
     margin-bottom: 10px;
     font-size: 16px;
+}
+#todolist li span:hover{
+    color : salmon;
 }
 #todolist li span:first-child{
     font-weight: 600;
