@@ -4,7 +4,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 
 const CACHE = "pwabuilder-page";
 
-// TODO: replace the following with the correct offline fallback page i.e.: 
+// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
 const offlineFallbackPage = "offline.html";
 
 self.addEventListener("message", (event) => {
@@ -12,8 +12,6 @@ self.addEventListener("message", (event) => {
     self.skipWaiting();
   }
 });
-
-
 self.addEventListener('install', async (event) => {
   event.waitUntil(
     caches.open(CACHE)
