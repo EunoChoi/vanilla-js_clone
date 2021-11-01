@@ -6,7 +6,7 @@
   "orientation": "any",
   "scope": "/",
   "short_name": "todo",
-  "start_url": "https://d162-222-120-12-152.ngrok.io",
+  "start_url": "https://eunochoi.github.io/vanilla-js_clone/",
   "theme_color": "#ffffff",
   "icons": [
     {
