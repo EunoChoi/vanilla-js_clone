@@ -12,7 +12,6 @@ self.addEventListener("message", (event) => {
     self.skipWaiting();
   }
 });
-///images/icon-109.png
 ///images/icon-111.png
 self.addEventListener('install', async (event) => {
   event.waitUntil(
