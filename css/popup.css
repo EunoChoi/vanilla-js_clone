@@ -25,20 +25,8 @@
 #popup_time{
     font-size: 20px;
     position: absolute;
-    top : 0px;
+    top : 15px;
     font-weight: 600;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color : white;
-
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-
-    height: 50px;
-    width: 100%;
 }
 #popup_text{
     border : none;
