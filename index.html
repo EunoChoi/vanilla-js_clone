@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,8 +13,9 @@
         import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
         const el = document.createElement('pwa-update');
         document.body.appendChild(el);
-     </script>
+    </script>
 </head>
+
 <body>
     <script src="https://kit.fontawesome.com/2370a8bb66.js" crossorigin="anonymous"></script>
 
@@ -22,7 +24,9 @@
         <span>Make Yourself Better</span>
     </div>
     <div class="header">
-        <a href="info.html"><div class="header_btn info">Info</div></a>
+        <a href="info.html">
+            <div class="header_btn info">Info</div>
+        </a>
         <div class="header_btn reset">Reset</div>
         <div class="header_btn status"></div>
         <h1 id="wellcome" class="hidden appear">Todo List</h1>
@@ -32,7 +36,7 @@
         </form>
 
         <div id="clock"></div>
-        <div id="weather_info" class="hidden"></div>    
+        <div id="weather_info" class="hidden"></div>
 
         <div class="input_todo_area">
             <form id="todo_form" action="">
@@ -50,14 +54,14 @@
                 <div id="popup_highlight">Highlight</div>
                 <div id="popup_save">Save</div>
                 <div id="popup_close">Close</div>
-            </div>      
+            </div>
         </div>
 
         <ul id="todolist"></ul>
     </div>
 
     <div class="bottom">
-            <span id="quotes"></span> 
+        <span id="quotes"></span>
     </div>
 
     <script src="JS/bgimg.js"></script>
@@ -66,6 +70,7 @@
     <script src="JS/clock.js"></script>
     <script src="JS/todo.js"></script>
     <script src="JS/login.js"></script>
-    
+
 </body>
+
 </html>
