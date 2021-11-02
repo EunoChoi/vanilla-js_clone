@@ -6,7 +6,7 @@ importScripts(
 
 const CACHE = 'pwabuilder-page';
 
-const offlineFallbackPage = 'offline.html';
+const offlineFallbackPage = 'index.html';
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
