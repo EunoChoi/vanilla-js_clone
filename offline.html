@@ -2,20 +2,78 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>No Internet Connection</title>
-    <style>
-        p {
-            margin-top: 30vh;
-            text-align: center;
-            font-size: 42px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Todo List</title>
+
+    <link rel="manifest" href="manifest.json" />
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="test.json" />
+
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
+    </script>
 </head>
 
 <body>
-    <p>⚠️ 인터넷 연결 상태가 좋지 않습니다 ⚠️</p>
+    <script src="https://kit.fontawesome.com/2370a8bb66.js" crossorigin="anonymous"></script>
+
+    <div id="splash_img">
+        <i class="fas fa-calendar-check fa-4x"></i>
+        <span>Make Yourself Better</span>
+    </div>
+    <div class="header">
+        <a href="info.html">
+            <div class="header_btn info">Info</div>
+        </a>
+        <div class="header_btn reset">Reset</div>
+        <div class="header_btn status"></div>
+        <h1 id="wellcome" class="hidden appear">Todo List</h1>
+
+        <form id="login_form" action="">
+            <input id="input_name" maxlength="15" required type="text" type="text" placeholder="Enter your name">
+        </form>
+
+        <div id="clock"></div>
+        <div id="weather_info" class="hidden"></div>
+
+        <div class="input_todo_area">
+            <form id="todo_form" action="">
+                <input id="input_todos" maxlength="120" required type="text" placeholder="Enter todo list">
+                <input type="submit" value="✔️" id="input_todos_btn">
+            </form>
+        </div>
+
+    </div>
+    <div class="main">
+        <div id="popup" class="hidden">
+            <span id="popup_time"></span>
+            <input type="text" id="popup_text">
+            <div id="popup_menu">
+                <div id="popup_highlight">Highlight</div>
+                <div id="popup_save">Save</div>
+                <div id="popup_close">Close</div>
+            </div>
+        </div>
+
+        <ul id="todolist"></ul>
+    </div>
+
+    <div class="bottom">
+        <span id="quotes"></span>
+    </div>
+
+    <script src="JS/bgimg.js"></script>
+    <script src="JS/quotes.js"></script>
+    <script src="JS/weather.js"></script>
+    <script src="JS/clock.js"></script>
+    <script src="JS/todo.js"></script>
+    <script src="JS/login.js"></script>
+
 </body>
 
 </html>
