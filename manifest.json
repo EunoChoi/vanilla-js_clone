@@ -1,5 +1,5 @@
 {
-  "background_color": "#fa8072",
+  "background_color": "#none",
   "dir": "ltr",
   "display": "standalone",
   "name": "todo",
@@ -7,7 +7,7 @@
   "scope": "/",
   "short_name": "todo",
   "start_url": "https://eunochoi.github.io/vanilla-js_clone/",
-  "theme_color": "#fa8072",
+  "theme_color": "#none",
   "icons": [
     {
       "src": "images/icon-109.png",
