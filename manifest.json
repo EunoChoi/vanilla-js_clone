@@ -1,13 +1,13 @@
 {
-  "background_color": "#transparent",
+  "background_color": "#fa8072",
   "dir": "ltr",
   "display": "standalone",
   "name": "todo",
   "orientation": "any",
   "scope": "/",
   "short_name": "todo",
-  "start_url": "https://eunochoi.github.io/vanilla-js_clone/",
-  "theme_color": "transparent",
+  "start_url": "https://5a01-116-43-247-44.ngrok.io",
+  "theme_color": "#fa8072",
   "icons": [
     {
       "src": "images/icon-109.png",
