@@ -6,7 +6,7 @@
   "orientation": "portrait",
   "scope": "/",
   "short_name": "todo",
-  "start_url": "https://5a01-116-43-247-44.ngrok.io",
+  "start_url": "https://eunochoi.github.io/vanilla-js_clone/",
   "theme_color": "#fa8072",
   "icons": [
     {
