@@ -7,13 +7,13 @@
     align-items: center;
 
     position: fixed;
-    top: 274px;
-    right: 10vw;
+    top: calc(100vh / 5);
+    
     border-radius: 25px;
     box-shadow: 0px 0px 10px gray;
 
-    height: 350px;
-    width: 80vw;
+    height: 60vh;
+
     background-color: white;
     color: grey;
 
@@ -21,6 +21,18 @@
     padding: 50px;
     box-sizing: border-box;
     text-align: center;
+}
+@media screen and (max-width : 600px){
+    #popup{
+        right: 10vw;
+        width: 80vw;
+    }
+}
+@media screen and (min-width : 601px){
+    #popup{
+        right: 20vw;
+        width: 60vw;
+    }
 }
 #popup_time{
     font-size: 24px;

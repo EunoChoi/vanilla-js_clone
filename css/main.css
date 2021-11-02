@@ -1,8 +1,5 @@
-
 .main{
     animation: fadeIn ease-in-out 0.8s;
-    margin-top: 300px;
-    padding-top: 50px;
     color: rgba(0,0,0,0.6);
 }
 .input_todo_area{
@@ -10,73 +7,50 @@
     transition: all 0.6s ease-in-out ;
 
     position: absolute;
-    bottom: -25px;
-
-    width: 60vw;
-    height: 50px;
-    z-index: 100;
 }
-.input_todo_area:focus-within{
-    width: 70vw;
-    animation: dance ease-in-out 0.7s infinite;
-}
-#input_todos{
-    animation: fadeIn ease-in-out 1.0s;
-    position: absolute;
 
-    background-color: white;
-    color: gray;
-    border: none;
-    border-radius: 25px;
-    box-shadow: 0px 0px 10px gray;
-
-    height: 50px;
-    width: 100%;
-
-    text-align: center;
-    font-size: 16px;
-
-    padding : 0px 60px;
-    margin: 0px;
-
-    box-sizing: border-box;
-}
 #input_todos_btn{
     /*transition: all 0.6s ease-in-out ;*/
 
     display: flex;
     justify-content: center;
     align-items: center;
-
     position: absolute;
-
     height: 50px;
     width: 50px;
     right: 0px;
-
     border-radius: 50%;
     border : none;
-
     padding : 0px;
     margin: 0px;
-
     background-color:salmon;
     color: white;
     font-size: 20px;
 }
+#input_todos{
+        
+    width: 100%;
+    height: 50px;
+    margin: 0px;
+    padding : 0px 60px;
+    animation: fadeIn ease-in-out 1.0s;
+    position: absolute;
+    background-color: white;
+    color: gray;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px gray;
+    text-align: center;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
 #todolist{
     display: flex;
     flex-direction: column;
 
     align-items: center;
     padding: 0px;
-    margin-top: 0px;
-}
-#todolist i{
-    color: lightblue;
-}
-#todolist i:hover{
-    color: salmon;
 }
 #todolist li{
     display: flex;
@@ -86,7 +60,7 @@
     transition : background 0.5s ease-in-out;
 
     border-radius: 10px;
-    width: 80vw;
+    
     
     list-style: none;
     border-bottom: rgba(0, 0, 0, 0.05) solid 1px;
@@ -95,34 +69,126 @@
     margin-bottom: 10px;
     font-size: 16px;
 }
-#todolist li span:hover{
-    color : salmon;
+
+#todolist i{
+    color: lightblue;
 }
+#todolist i:hover{
+    color: salmon;
+}
+
 #todolist li span:first-child{
     font-weight: 600;
 }
 
-
-#todolist li span:nth-child(2){
-    width: calc(80vw - 170px);
-    white-space: nowrap;
-    overflow: hidden;
-	text-overflow: ellipsis;
-    margin : 0px 15px;
-}
-/*hover animation in list
-#todolist li span:first-child:hover{
-    animation: dance 0.7s ease-in-out infinite;
-}
-#todolist li span:nth-child(2):hover{
-    animation: dance 0.7s ease-in-out infinite;
-}
-#todolist li span:last-child:hover{
-    animation: dance 0.7s ease-in-out infinite;
-}
-*/
-
 #todolist li:last-child{
     border: none;
     margin-bottom: 50px;
+}
+
+#todolist li span:nth-child(2){
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+@media screen and (max-width : 600px)
+{
+    .main{
+        margin-top: 300px;
+        padding-top: 50px;
+    }
+    .input_todo_area{
+
+        bottom: -25px;
+
+        width: 60vw;
+        height: 50px;
+        z-index: 100;
+    }
+
+    .input_todo_area:focus-within{
+        width: 70vw;
+        animation: dance ease-in-out 0.7s infinite;
+    }
+
+    
+    #todolist{
+        margin-top: 0px;
+    }
+
+    
+    #todolist li{
+        width: 80vw;
+    }
+
+    #todolist li span:nth-child(2){
+        width: calc(80vw - 170px);
+        margin : 0px 15px;
+    }
+
+    
+}
+
+@media screen and (min-width : 601px)
+{
+    .main{
+        margin-top: 0px;
+        padding-left: 300px;
+    }
+
+    .input_todo_area{ 
+        background-color: whitesmoke;
+
+        padding-top: 50px;
+        top: 0px;
+        box-sizing: border-box;
+        height: 150px;
+
+        /*right: calc((100vw - 50px) / 2 * -1);*/
+        right: calc((100vw - 300px) * -1);
+        width: calc(100vw - 300px);     
+    }
+
+    #todo_form{
+        transition: ease-in-out 0.6s;
+        position: absolute;
+        left : calc((100vw - 550px) / 2);
+
+        width: 250px;
+        height: 50px;
+    }
+    
+    #todo_form:focus-within{
+        width: calc(100vw - 500px);
+        left : 100px;
+    }
+    #input_todos{
+        z-index: 10;
+        left : 0px;
+
+    }
+
+    #input_todos_btn{
+        /*transition: all 0.6s ease-in-out ;*/
+        right: 0px;
+        z-index: 100;
+    }
+
+    #todolist{     
+        margin-top: 150px;
+    }
+    
+    #todolist li{
+        width: calc(100vw - 400px);
+    }
+
+    #todolist li span:nth-child(2){
+        width: calc(100vw - 550px);
+        margin : 0px;
+    }
+
+
 }
