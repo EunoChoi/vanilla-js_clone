@@ -2,7 +2,7 @@ const todoForm = document.querySelector("#todo_form");
 const inputTodos = document.querySelector("#input_todos");
 
 const popup = document.querySelector("#popup");
-const popupTime = document.querySelector("#popup_time");
+//const popupTime = document.querySelector("#popup_time");
 const popupText = document.querySelector("#popup_text");
 const popupClose = document.querySelector("#popup_close");
 const popupHighlight = document.querySelector("#popup_highlight");
@@ -56,9 +56,18 @@ function input(event){
 }
 
 function viewOpen(event){
-    time = event.target.parentElement.childNodes[0].innerText;
+    
+    let index;
+
     text = event.target.parentElement.childNodes[1].innerText;
     id = event.target.parentElement.childNodes[2].className;
+
+    for(let i=0;i<todoDB.length;i++){
+        if(todoDB[i].id===id){
+            index = i;
+        }
+    }
+    time = todoDB[index].timeAlt;
     
     localStorage.setItem("temp",id);
     popup.classList.toggle("appear");
@@ -184,10 +193,8 @@ function addList(id, time, timeAlt, text, status){
     li.appendChild(spanTime);
 	li.appendChild(spanText);
     li.appendChild(spanDelete);
-    li.style.borderRadius = "10px";
-    li.style.transition = "background 0.5s ease-in-out";
-    //lodaing highlight property
-    
+
+    //lodaing highlight property by adding 'star' class
     if(status===true){
         li.classList.add("star");
     }
@@ -197,7 +204,6 @@ function addList(id, time, timeAlt, text, status){
     spanDelete.appendChild(i);
     spanDelete.className = id;
     i.className = "fas fa-times-circle";
-    i.style.color = "lightblue";
 
     spanTime.innerText = time;
 	spanText.innerText = text;
