@@ -1,0 +1,14 @@
+[
+      {
+            "relation": [
+                  "delegate_permission/common.handle_all_urls"
+            ],
+            "target": {
+                  "namespace": "android_app",
+                  "package_name": "io.github.eunochoi.twa",
+                  "sha256_cert_fingerprints": [
+                        "0E:17:60:4B:E6:20:16:2A:B1:8B:18:78:0B:2F:DE:9F:EA:89:3E:C1:C6:57:BE:AF:5B:40:2B:BD:89:FF:54:9E"
+                  ]
+            }
+      }
+]
