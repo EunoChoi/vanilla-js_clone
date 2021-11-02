@@ -23,16 +23,17 @@
     text-align: center;
 }
 #popup_time{
-    font-size: 20px;
+    font-size: 24px;
     position: absolute;
     top : 0px;
-    font-weight: 600;
+    font-weight: 800;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    color : white;
+    color : salmon;
+
 
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
