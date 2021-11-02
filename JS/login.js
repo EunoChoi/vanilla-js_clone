@@ -6,15 +6,20 @@ const wellcomeArea = document.querySelector("#wellcome");
 const splash = document.querySelector("#splash_img");
 
 
-function loginByName(name){
+function loginByName(name) {
     headerTitle.style.color = "salmon";
-    headerTitle.style.fontSize = "34px";
-    headerTitle.innerText = `Wellcome ${name}`;
+    headerTitle.innerText = `${name}'s Todo`;
     loginForm.style.display = "none";
     weather.classList.toggle(CLASS_HIDDEN);
 }
 
-function submitLogin(event){
+function submitLogin(event) {
+
+    setTimeout(function () {
+        history.go(0)
+    }, 1200);
+
+
     event.preventDefault();
     loginByName(inputName.value);
 
@@ -23,27 +28,41 @@ function submitLogin(event){
     todoForm.classList.remove(CLASS_HIDDEN);
     wellcomeArea.classList.remove(CLASS_HIDDEN);
 
-    headerArea.style.height = "300px";
-    headerArea.style.padding = "40px 0px"
+    const mq = window.matchMedia("screen and (max-width : 600px)");
 
-    startInterval(timer,1000);
+
+    //headerArea add class that header_col 
+    if (mq.matches) {
+        headerArea.style.height = "300px";
+        headerArea.style.width = "100vw";
+    }
+    //header tag add class that header_rol
+    else {
+        headerArea.style.height = "100vh";
+        headerArea.style.width = "300px";
+    }
+
+    startInterval(timer, 1000);
     //use local storage
     localStorage.setItem("user", inputName.value);
 }
 
-loginForm.addEventListener("submit",submitLogin);
+loginForm.addEventListener("submit", submitLogin);
 
-if(localStorage.getItem("user") == null && localStorage.getItem("todoDB") == null){
-    splash.style.visibility = "visible";   
+if (localStorage.getItem("user") == null && localStorage.getItem("todoDB") == null) {
+    splash.style.visibility = "visible";
     clock.classList.add("hidden");
     todoForm.classList.add("hidden");
+    headerArea.style.width = "100vw";
+    headerArea.style.height = "100vh";
+    headerArea.style.alignItems = "center";
 }
 
-if(localStorage.getItem("user")!=null){
+if (localStorage.getItem("user") != null) {
     loginByName(localStorage.getItem("user"));
 }
 
-else{
+else {
     headerArea.style.height = "100vh";
     headerArea.style.padding = "150px 0px";
 }
