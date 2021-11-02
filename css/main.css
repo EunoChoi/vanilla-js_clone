@@ -70,13 +70,6 @@
     font-size: 16px;
 }
 
-#todolist i{
-    color: lightblue;
-}
-#todolist i:hover{
-    color: salmon;
-}
-
 #todolist li span:first-child{
     font-weight: 600;
 }
@@ -147,7 +140,6 @@
         box-sizing: border-box;
         height: 150px;
 
-        /*right: calc((100vw - 50px) / 2 * -1);*/
         right: calc((100vw - 300px) * -1);
         width: calc(100vw - 300px);     
     }
@@ -162,6 +154,7 @@
     }
     
     #todo_form:focus-within{
+        animation: dance ease-in-out 0.7s infinite;
         width: calc(100vw - 500px);
         left : 100px;
     }
@@ -172,7 +165,7 @@
     }
 
     #input_todos_btn{
-        /*transition: all 0.6s ease-in-out ;*/
+        animation: fadeIn ease-in-out 1s forwards;
         right: 0px;
         z-index: 100;
     }
