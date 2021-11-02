@@ -54,6 +54,7 @@
     padding: 0px;
 }
 #todolist li{
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -73,7 +74,6 @@
 .deleteicon{
     color: tomato;
 }
-
 #todolist li span:first-child{
     font-weight: 600;
 }
@@ -84,11 +84,9 @@
 }
 
 #todolist li span:nth-child(2){
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
 
 @media screen and (max-width : 750px)
@@ -113,6 +111,7 @@
 
     
     #todolist{
+        
         margin-top: 0px;
     }
 
@@ -149,7 +148,7 @@
     }
 
     #todo_form{
-        transition: all ease-in-out 0.6s;
+        transition: all ease-in-out 1s;
         position: absolute;
         left : calc((100vw - 550px) / 2);
 
