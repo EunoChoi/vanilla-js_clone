@@ -15,9 +15,7 @@ function loginByName(name) {
 
 function submitLogin(event) {
 
-    setTimeout(function () {
-        history.go(0)
-    }, 1100);
+    history.go(0)
 
     event.preventDefault();
     loginByName(inputName.value);

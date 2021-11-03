@@ -22,18 +22,7 @@
     box-sizing: border-box;
     text-align: center;
 }
-@media screen and (max-width : 750px){
-    #popup{
-        right: 10vw;
-        width: 80vw;
-    }
-}
-@media screen and (min-width : 751px){
-    #popup{
-        right: 20vw;
-        width: 60vw;
-    }
-}
+
 #popup_time{
     font-size: 24px;
     position: absolute;
@@ -88,3 +77,30 @@
 #popup_close{
     width : 30%;
 }
+@media screen and (orientation: portrait){
+    #popup{
+        right: 10vw;
+        width: 80vw;
+    }
+}
+@media screen and (orientation: landscape)
+{
+    #popup{
+        right: 20vw;
+        width: 60vw;
+    }
+}
+/*
+@media screen and (max-width : 750px){
+    #popup{
+        right: 10vw;
+        width: 80vw;
+    }
+}
+
+@media screen and (min-width : 751px){
+    #popup{
+        right: 20vw;
+        width: 60vw;
+    }
+}*/
