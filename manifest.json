@@ -1,5 +1,5 @@
 {
-  "background_color": "transparent",
+  "background_color": "#000000",
   "dir": "ltr",
   "display": "fullscreen",
   "name": "My Todo",
@@ -7,7 +7,7 @@
   "scope": "/",
   "short_name": "Todo",
   "start_url": "https://eunochoi.github.io/vanilla-js_clone/",
-  "theme_color": "transparent",
+  "theme_color": "#000000",
   "icons": [
     {
       "src": "images/icon-109.png",
