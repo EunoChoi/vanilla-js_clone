@@ -81,7 +81,8 @@
     color:palegoldenrod;
     font-weight: 600;
     font-size: 20px;
-
+    
+    padding : 0px 20px;
     text-align: center;
 }
 #clock{
@@ -99,16 +100,17 @@
     padding : 10px;
 }
 
-@media screen and (max-width : 750px)
-{      
+
+
+@media screen and (orientation: portrait)
+{
     .header{
         will-change:auto;
         width: 100vw;
         height: 300px;
     }
 }
-
-@media screen and (min-width : 751px)
+@media screen and (orientation: landscape)
 {
     .header{
         will-change:auto;
@@ -118,22 +120,28 @@
     
     #wellcome {
         font-size: 36px;
-        margin : 0px 30px;
+        margin : 0px 10px;
     }
 }
+@media screen and (orientation : portrait) and (max-width : 340px){
+    #clock{
+        font-size: 35px;
+        width: 145px;
+    }
+}
+@media screen and (orientation : landscape) and (max-width : 570px){
 
-@media screen and (max-height : 500px)
+}
+@media screen and (orientation : landscape) and (max-height : 400px)
 {
     #wellcome {
-        font-size: 26px;
+        font-size: 32px;
     }
     #clock{
-    
-        margin:10px 0px;
-        font-size: 41px;
-        width: 170px;
-    
-        border : solid white 7px;
-        padding : 7px;
+        font-size: 35px;
+        width: 145px;
+    }
+    #weather_info{
+        font-size: 15px;
     }
 }
