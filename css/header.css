@@ -34,15 +34,13 @@
     width: 50px;
     border-bottom: solid whitesmoke 2px;
 }
-.header .info{
-    left : 70px;
-    width: 40px;
-    border-bottom: solid whitesmoke 2px;
-}
 .header .status{
-    left : 120px;
-    width: 140px;
+    left : 70px;
+    width: auto;
     text-align: left;
+    padding: 0px 5px;
+    border-bottom: solid whitesmoke 2px;
+
 }
 
 #wellcome{
@@ -129,9 +127,7 @@
         width: 145px;
     }
 }
-@media screen and (orientation : landscape) and (max-width : 570px){
 
-}
 @media screen and (orientation : landscape) and (max-height : 400px)
 {
     #wellcome {

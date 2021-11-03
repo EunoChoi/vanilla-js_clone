@@ -27,15 +27,12 @@
         <span>Make Yourself Better</span>
     </div>
     <div class="header">
-        <a href="info.html">
-            <div class="header_btn info">Info</div>
-        </a>
         <div class="header_btn reset">Reset</div>
         <div class="header_btn status"></div>
-        <h1 id="wellcome" class="hidden appear">Todo List</h1>
+        <h1 id="wellcome" class="hidden appear">Your Todo List</h1>
 
         <form id="login_form" action="">
-            <input id="input_name" maxlength="15" required type="text" type="text" placeholder="Enter your name">
+            <input id="input_name" maxlength="10" required type="text" type="text" placeholder="Enter your name">
         </form>
 
         <div id="clock"></div>
@@ -43,13 +40,14 @@
 
         <div class="input_todo_area">
             <form id="todo_form" action="">
-                <input id="input_todos" maxlength="120" required type="text" placeholder="Enter todo list">
+                <input id="input_todos" maxlength="150" required type="text" placeholder="Enter Text">
                 <input type="submit" value="✔️" id="input_todos_btn">
             </form>
         </div>
 
     </div>
     <div class="main">
+
         <div id="popup" class="hidden">
             <span id="popup_time"></span>
             <input type="text" id="popup_text">
@@ -67,11 +65,11 @@
         <span id="quotes"></span>
     </div>
 
+    <script src="JS/todo.js"></script>
     <script src="JS/bgimg.js"></script>
     <script src="JS/quotes.js"></script>
     <script src="JS/weather.js"></script>
     <script src="JS/clock.js"></script>
-    <script src="JS/todo.js"></script>
     <script src="JS/login.js"></script>
 
 </body>

@@ -44,8 +44,9 @@
     border-radius: 25px;
     box-shadow: 0px 0px 10px gray;
 
-    text-align: left;
+    text-align: center;
     font-size: 20px;
+    padding-right: 50px;
     box-sizing: border-box;
 }
 
@@ -98,7 +99,7 @@
 }
 
 
-@media screen and (orientation: portrait)
+@media screen and (orientation: portrait) 
 {
     .main{
         margin-top: 300px;
@@ -205,7 +206,7 @@
         margin : 0px;
     }
 }
-@media screen and (orientation : landscape) and (max-width : 500px){
+@media screen and (orientation : landscape) and (max-width : 590px){
     #input_todos{
         font-size: 0px;
     }
