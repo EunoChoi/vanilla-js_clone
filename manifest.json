@@ -1,13 +1,13 @@
 {
-  "background_color": "#none",
+  "background_color": "transparent",
   "dir": "ltr",
   "display": "standalone",
-  "name": "todo",
+  "name": "My Todo",
   "orientation": "portrait",
   "scope": "/",
-  "short_name": "todo",
+  "short_name": "Todo",
   "start_url": "https://eunochoi.github.io/vanilla-js_clone/",
-  "theme_color": "#none",
+  "theme_color": "transparent",
   "icons": [
     {
       "src": "images/icon-109.png",
