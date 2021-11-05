@@ -98,13 +98,18 @@
     transition:  all 0.5s ease-in-out;
     padding-top: 0px;
     width: calc(80vw - 170px);
-    height:1rem;
+
+
+    
     background-color: tomato;
 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
+
+    line-height: 1.0;
+    height:1em;
 }
 
 #todo_form{
