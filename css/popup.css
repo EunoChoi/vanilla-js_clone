@@ -51,7 +51,6 @@
     height: calc(60vh - 150px);
     color: rgba(0, 0, 0, 0.5);
     text-align: center;
-    /*vertical-align:text-bottom;*/
 }
 #popup_menu{
     display: flex;
@@ -86,12 +85,18 @@
         right: 10vw;
         width: 80vw;
     }
+    #popup_text{
+        width: 70vw;
+    }
 }
 @media screen and (orientation: landscape)
 {
     #popup{
         right: 20vw;
         width: 60vw;
+    }
+    #popup_text{
+        width: 50vw;
     }
 }
 /*
