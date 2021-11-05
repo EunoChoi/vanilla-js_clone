@@ -43,11 +43,15 @@
     width: 100%;
 }
 #popup_text{
+    
     border : none;
+    resize: none;
 
     font-size: 20px;
+    height: calc(60vh - 150px);
     color: rgba(0, 0, 0, 0.5);
     text-align: center;
+    /*vertical-align:text-bottom;*/
 }
 #popup_menu{
     display: flex;
