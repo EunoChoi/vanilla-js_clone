@@ -99,6 +99,7 @@
 
     width: calc(80vw - 170px);
     height:1.0em;
+    background-color: tomato;
 
     white-space: nowrap;
     overflow: hidden;

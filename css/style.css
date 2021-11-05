@@ -65,11 +65,6 @@ input[type="text"]:focus-within{
     animation: fadeOut 0.5s ease-in-out forwards;
 }
 
-.star{
-    background-color:khaki;
-    font-weight: 800;
-}
-
 .transition_all{
     transition: all ease-in-out 1s;
 }
