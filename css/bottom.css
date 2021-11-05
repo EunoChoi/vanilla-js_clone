@@ -6,9 +6,10 @@
     align-items: center;
     position: fixed;
     bottom: 0px;
+    left : 0px;
 
     color: white;
-    /*background-color: lightblue;*/
+
     height: 50px;
     width: 100vw;
 
@@ -21,10 +22,19 @@
 .bottom span{
     animation: fadeIn ease-in-out 0.8s forwards;
 }
+@media screen and (orientation : landscape){
+    .bottom{
+        bottom:0px;
+        height: 50px;
+        z-index: 10;
+        padding-right: calc(100vw - 300px);
+    }
+}
 
+/*
 @media screen and (min-width : 601px)
 {
     .bottom span{
         font-size: 18px;
     }
-}
+}*/

@@ -1,4 +1,4 @@
-const colors = ["mediumaquamarine", "lightblue", "lightpink", "steelblue", "slategrey"];
+const colors = ["mediumaquamarine", "lightblue", "lightpink", "steelblue", "slategrey", "grey"];
 const headerArea = document.querySelector(".header");
 const bottomArea = document.querySelector(".bottom");
 const popupTime = document.querySelector("#popup_time");
