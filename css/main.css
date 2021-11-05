@@ -96,7 +96,7 @@
 
 #todolist li span:nth-child(2){
     transition:  all 0.5s ease-in-out;
-
+    padding-top: 0px;
     width: calc(80vw - 170px);
     height:1rem;
     background-color: tomato;
